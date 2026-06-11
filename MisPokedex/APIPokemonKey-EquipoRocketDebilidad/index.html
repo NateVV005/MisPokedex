@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Analizador Rocket - Analizador de Debilidades</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css" />
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+
+    <header class="pokeball-top">
+        <div class="rocket-brand">
+            <span class="rocket-logo" onclick="toggleIntelModal(true)" title="Acceder a archivos secretos">R</span>
+            <h1>Analizador Rocket</h1>
+        </div>
+    </header>
+
+    <div class="pokeball-belt">
+        <div class="pokeball-button">
+            <input type="text" id="pokemon_id" placeholder="Ej: 390 o chimchar" />
+            <button onclick="analizarEnemigo()">Analizar Rival</button>
+        </div>
+    </div>
+
+    <div id="intel-modal" class="modal-overlay" onclick="cerrarModalExterno(event)">
+        <section class="rocket-intel">
+            <button class="close-modal-btn" onclick="toggleIntelModal(false)">×</button>
+            
+            <h3>▲ REPORTE TÁCTICO DE FRECUENCIAS ALTERNATIVAS ▲</h3>
+            <p>
+                Las lecturas estándar terminan en el ID 1025. Las formas regionales y mutaciones especiales se interceptan forzando el radar a partir de la frecuencia <strong>10001</strong>.
+            </p>
+            <div class="intel-shortcuts">
+                <button onclick="cargarAccesoRapido('10091')">Rattata Alola (#10091)</button>
+                <button onclick="cargarAccesoRapido('10141')">Meowth Alola (#10141)</button>
+                <button onclick="cargarAccesoRapido('greninja-ash')">Greninja-Ash</button>
+            </div>
+        </section>
+    </div>
+
+    <main class="pokeball-bottom">
+        <div id="container"></div>
+    </main>
+
+</body>
+</html>
